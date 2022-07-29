@@ -3,17 +3,25 @@ package ht.bekend.flixter.Models;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.parceler.Parcel;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Parcel
 public class Movie {
 
-
+     int id;
+     int vote_average;
      String title;
      String overview;
      String poster_path;
      String backdrop_path;
+
+     public Movie()
+     {
+         
+     }
 
      //constructor
     public Movie(JSONObject jsonObject) throws JSONException {
@@ -21,6 +29,8 @@ public class Movie {
         overview = jsonObject.getString("overview");
         poster_path = jsonObject.getString("poster_path");
         backdrop_path = jsonObject.getString("backdrop_path");
+        vote_average = jsonObject.getInt("vote_average");
+        id = jsonObject.getInt("id");
     }
     public static List<Movie> fromJsonArray(JSONArray movieJsonArray) throws JSONException {
         List<Movie> movies = new ArrayList<>();
@@ -46,4 +56,11 @@ public class Movie {
         return String.format("https://image.tmdb.org/t/p/w342/%s",backdrop_path);
     }
 
+    public float getVote_average() {
+        return vote_average;
+    }
+
+    public int getId() {
+        return id;
+    }
 }
