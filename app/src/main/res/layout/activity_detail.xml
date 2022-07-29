@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DetailActivity">
+
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:id="@+id/player"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:layout_margin="5dp"
+        android:padding="0dp"
+        android:id="@+id/tvDTitle"
+        tools:text="Thor : Amour et Tonnerre"/>
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:isIndicator="true"
+        android:indeterminate="false"
+        style="@style/Widget.AppCompat.RatingBar.Indicator"
+        android:numStars="10"
+        android:rating="8.5"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:padding="0dp"
+        android:layout_margin="5dp"
+        android:id="@+id/tvDOverview"
+        tools:text="Après que sa retraite ait été interrompue par Gorr le Dieu Boucher, un tueur galactique qui cherche l'extinction des dieux, Thor demande l'aide du roi Valkyrie, de Korg et de l'ex-petite amie Jane Foster, qui manie maintenant inexplicablement Mjolnir en tant que Puissant Thor. Ensemble, ils se lancent dans une aventure cosmique déchirante pour découvrir le mystère de la vengeance du Dieu Boucher et l'arrêter avant qu'il ne soit trop tard"/>
+
+
+</LinearLayout>
