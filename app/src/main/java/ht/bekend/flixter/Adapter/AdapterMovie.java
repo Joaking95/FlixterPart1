@@ -1,5 +1,6 @@
 package ht.bekend.flixter.Adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -10,10 +11,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.util.Pair;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -27,6 +30,7 @@ import org.parceler.Parcels;
 import java.util.List;
 
 import ht.bekend.flixter.DetailActivity;
+import ht.bekend.flixter.MainActivity;
 import ht.bekend.flixter.Models.Movie;
 import ht.bekend.flixter.R;
 
@@ -65,6 +69,7 @@ public class AdapterMovie extends RecyclerView.Adapter<AdapterMovie.ViewHolder>{
         TextView tvOverv;
         ImageView ivIm;
         RelativeLayout container;
+        TextView tvDOveriew;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -72,6 +77,7 @@ public class AdapterMovie extends RecyclerView.Adapter<AdapterMovie.ViewHolder>{
             tvOverv = itemView.findViewById(R.id.tvOverview);
             ivIm = itemView.findViewById(R.id.ivPoster);
             container = itemView.findViewById(R.id.container);
+            tvDOveriew = itemView.findViewById(R.id.tvDOverview);
         }
 
         public void bind(Movie movie) {
@@ -89,7 +95,6 @@ public class AdapterMovie extends RecyclerView.Adapter<AdapterMovie.ViewHolder>{
                 public void onClick(View v) {
 
                     Intent intent = new Intent(context, DetailActivity.class);
-                    intent.putExtra("title",movie.getTitle());
                     intent.putExtra("movie", Parcels.wrap(movie));
                     context.startActivity(intent);
                 }
