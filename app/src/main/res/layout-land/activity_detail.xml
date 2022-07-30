@@ -11,7 +11,7 @@
     <com.google.android.youtube.player.YouTubePlayerView
         android:id="@+id/player"
         android:layout_width="match_parent"
-        android:layout_height="200dp"/>
+        android:layout_height="150dp"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -37,10 +37,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:textSize="20sp"
-        android:justificationMode="inter_word"
         android:textColor="@color/cardview_dark_background"
         android:textStyle="italic"
         android:layout_margin="5dp"
+        android:justificationMode="inter_word"
         android:id="@+id/tvDOverview"
         tools:text="Après que sa retraite ait été interrompue par Gorr le Dieu Boucher, un tueur galactique qui cherche l'extinction des dieux, Thor demande l'aide du roi Valkyrie, de Korg et de l'ex-petite amie Jane Foster, qui manie maintenant inexplicablement Mjolnir en tant que Puissant Thor. Ensemble, ils se lancent dans une aventure cosmique déchirante pour découvrir le mystère de la vengeance du Dieu Boucher et l'arrêter avant qu'il ne soit trop tard"/>
 
