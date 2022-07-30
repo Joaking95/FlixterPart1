@@ -1,5 +1,6 @@
 package ht.bekend.flixter.Adapter;
 
+import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.util.Pair;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -99,7 +101,6 @@ public class AdapterMovie extends RecyclerView.Adapter<AdapterMovie.ViewHolder>{
                 @Override
                 public void onClick(View v ) {
                       checkRippleAnimation(v);
-
                 }
                 public void checkRippleAnimation(View view){
                     Intent intent = new Intent(context, DetailActivity.class);
