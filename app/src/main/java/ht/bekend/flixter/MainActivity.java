@@ -2,11 +2,15 @@ package ht.bekend.flixter;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.util.Pair;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ActivityOptions;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.codepath.asynchttpclient.AsyncHttpClient;
@@ -30,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     List<Movie> movies;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         rvMovies.setAdapter(adapterMovie);
 
         rvMovies.setLayoutManager(new LinearLayoutManager(this));
+
 
 
         AsyncHttpClient client = new AsyncHttpClient();

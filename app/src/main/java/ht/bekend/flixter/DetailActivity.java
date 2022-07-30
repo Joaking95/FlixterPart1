@@ -1,18 +1,21 @@
 package ht.bekend.flixter;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+import android.transition.Visibility;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
+import com.google.android.youtube.player.internal.v;
 
 import ht.bekend.flixter.Models.Movie;
 import okhttp3.Headers;
@@ -21,8 +24,6 @@ import okhttp3.Headers;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.parceler.Parcels;
-
-import java.lang.reflect.Modifier;
 
 public class DetailActivity extends YouTubeBaseActivity {
 
@@ -33,6 +34,7 @@ public class DetailActivity extends YouTubeBaseActivity {
     TextView tvDTitle;
     TextView tvDOverview;
     RatingBar rbBAR;
+    ImageButton floatingactionbutton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +72,7 @@ public class DetailActivity extends YouTubeBaseActivity {
         });
     }
 
+
     private void initializeYoutube(final String youtubeKey, Movie movie) {
 
         youTubePlayerView.initialize(YOUTUBE_API_KEY, new YouTubePlayer.OnInitializedListener() {
@@ -78,10 +81,14 @@ public class DetailActivity extends YouTubeBaseActivity {
                 Log.d("DetailActivity","onInitializationSuccess");
                      if(movie.getVote_average()>5){
                          youTubePlayer.loadVideo(youtubeKey);
+
+
+
                      }
                      else{
                          // do any work here to cue video, play video, etc.
                          youTubePlayer.cueVideo(youtubeKey);
+
 
                      }
 
